@@ -4,7 +4,7 @@ class DishesController < ApplicationController
   # GET /dishes
   # GET /dishes.json
   def index
-    @dishes = Dish.all
+    @courses = Course.all
   end
 
   # GET /dishes/1
@@ -14,7 +14,7 @@ class DishesController < ApplicationController
 
   # GET /dishes/new
   def new
-    @dish = Dish.new
+    @dish = Dish.new(course_id: params[:course_id])
   end
 
   # GET /dishes/1/edit

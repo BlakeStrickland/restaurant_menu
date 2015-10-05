@@ -1,6 +1,20 @@
 Rails.application.routes.draw do
+  root 'dishes#index'
+
   resources :courses
   resources :dishes
+
+  # get 'dishes/index'
+  # post 'dishes/create'
+  # get 'dishes/new'
+  # get 'dishes/edit'
+  # get 'dishes/show'
+  # patch 'dishes/update'
+  # put 'dishes/update'
+  # delete 'dishes/destroy'
+
+  get 'http://localhost:3000/dishes/new' => 'dishes#new'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
