@@ -24,9 +24,7 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <% if params[:course_id]
-        f.hidden_field :course_id end%>
-
+    <%= f.hidden_field :course_id, :course_id => "" %>
   </div>
   <div class="actions">
     <%= f.submit %>

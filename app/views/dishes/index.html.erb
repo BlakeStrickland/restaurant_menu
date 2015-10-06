@@ -3,30 +3,24 @@
 <h1 align=center>Menu</h1>
 
 <% @courses.each do |course| %>
-  <h1 align=center ><%=course.name%></h1>
+  <h2 align=center ><%=course.name%></h2>
   <table class= "appetizer" align=center>
 
-    <thead>
+    <thead align=center>
       <% course.dishes.each do |dish| %>
-      <% if course.id == 1 %>
-        <%= image_tag asset_url('escargot.jpg'), class: "menu-image" %>
-      <% elsif course.id == 2 %>
-        <%= image_tag asset_url('lobsterbisque.jpg'), class: "menu-image" %>
-      <% else course.id == 3 %>
-        <%= image_tag asset_url('creme.jpg'), class: "menu-image" %>
+      <th><%= link_to "#{dish.name}", edit_dish_path(dish) %></th>
+      <th>$<%= dish.price %></th>
+        <td><%= dish.description %></td>
+      </tr>
+
+      <tr>
       <% end %>
-        <tr>
-          <th><%= link_to "#{dish.name}", edit_dish_path(dish) %></th>
-          <th>$<%= dish.price %></th>
-            <td><%= dish.description %></td>
-          </tr>
-          <tbody align=center>
-            <td> <%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tbody>
-        <% end %>
-        <%= link_to 'Add to ' + course.name, new_dish_path(course_id: course.id)%>
-        <br>
+      <%= link_to 'Add to ' + course.name, new_dish_path(course_id: course.id)%>
+      <br>
     </thead>
   </table>
   <br>
 <% end %>
+<%= image_tag asset_url('escargot.jpg'), class: "snail" %>
+<%= image_tag asset_url('lobsterbisque.jpg'), class: "seasnail" %>
+<%= image_tag asset_url('creme.jpg'), class: "snailtrail" %>
