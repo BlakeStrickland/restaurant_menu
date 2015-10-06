@@ -13,3 +13,42 @@
  *= require_tree .
  *= require_self
  */
+ body{
+   background-color: 6699FF;
+ }
+
+  h2{
+ font-family: cursive;
+ font-size: 32px;
+
+ }
+
+ .body-text{
+   margin-left: 300px;
+   margin-right: 300px;
+ }
+
+
+
+ .snail {
+   position: absolute;
+   margin-right: 40px;
+   height: 200px;
+   width: 200px;
+ }
+ .bisque {
+   position: absolute;
+   padding-left: 1000px;
+   height: 200px;
+   width: 200px;
+ }
+ .creme {
+   float: left;
+   height: 200px;
+   width: 200px;
+ }
+ .steak {
+   float: right;
+   height: 200px;
+   width: 200px;
+ }
