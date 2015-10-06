@@ -1,6 +1,6 @@
 <h1>Editing Dish</h1>
 
 <%= render 'form' %>
-<%= link_to 'Destroy', @dish, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Show', @dish %> |
-<%= link_to 'Back', dishes_path %>
+<%= link_to 'Show', @dish %> <br>
+<%= link_to 'Back', dishes_path %><br><br>
+<button><%= link_to 'Destroy', @dish, method: :delete, data: { confirm: 'Are you sure?' } %></button>

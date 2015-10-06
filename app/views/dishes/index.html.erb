@@ -1,16 +1,21 @@
-<p id="notice"><%= notice %></p>
+<html>
+<body>
+  <p id="notice"><%= notice %></p>
 <%= image_tag asset_url('creme.jpg'), class: "creme" %>
 <%= image_tag asset_url('steakness.jpg'), class: "steak" %>
 <div class="body-text">
 
 <% @courses.each do |course| %>
-  <h2 align=center ><%=course.name%></h2>
-  <table class= "appetizer" align=center>
+  <h2  ><%=course.name%></h2>
+  <table class= "appetizer" >
 
-    <thead align=center>
+    <thead>
       <% course.dishes.each do |dish| %>
       <th><%= link_to "#{dish.name}", edit_dish_path(dish) %> $<%= dish.price %></th>
+    </thead>
+    <tbody>
         <td><%= dish.description %></td>
+    </tbody>
       <% end %>
       <%= link_to 'Add to ' + course.name, new_dish_path(course_id: course.id)%>
       <br>
@@ -21,3 +26,5 @@
 </div>
 <%= image_tag asset_url('escargot.jpg'), class: "snail" %>
 <%= image_tag asset_url('lobsterbisque.jpg'), class: "bisque" %>
+</body>
+</html>
